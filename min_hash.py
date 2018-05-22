@@ -23,7 +23,7 @@ def sigGen(matrix):
 
         # choose a row of matrix randomly
         randomSeq = random.choice(seqSet)
-
+        #found value which not zero in col, record position of the value
         for i in range(matrix.shape[1]):
 
             if matrix[randomSeq][i] != 0 and result[i] == -1:
@@ -125,7 +125,7 @@ def nn_search(dataSet, query):
     hashBucket = minHash(input_matrix, 20, 5)
 
     queryCol = input_matrix.shape[1] - 1
-
+    # note: the similiar one of query maybe in muliple hashBucket
     for key in hashBucket:
         if queryCol in hashBucket[key]:
             for i in hashBucket[key]:
